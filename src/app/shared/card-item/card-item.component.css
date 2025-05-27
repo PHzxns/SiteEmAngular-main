@@ -1,23 +1,25 @@
+
 .example-card {
     width: 300px;
     height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: #ffffff;
-    border-radius: 16px;
+    background: #c0c0c0;
+    border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
     overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s ease;
     position: relative;
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    border: none;
+    color: black;
 }
 
 .example-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.16);
-    border-color: rgba(92, 129, 142, 0.2);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
 }
+
 
 .example-card img {
     width: 100%;
@@ -30,104 +32,60 @@
     transform: scale(1.05);
 }
 
-.example-card button {
+
+mat-card-content {
+    padding: 16px;
+}
+
+mat-card-content h1 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+mat-card-content h2 {
+    margin: 4px 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+mat-card-content p {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+/* BOTÃO COMPRAR */
+.btn-comprar {
     width: calc(100% - 32px);
     margin: 0 16px 16px;
-    background: linear-gradient(135deg, #5c818e 0%, #4a6b77 100%);
+    background-color: #4a5c48;
     color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 10px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-align: center;
     font-weight: 600;
     font-size: 14px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(92, 129, 142, 0.3);
-    position: relative;
-    overflow: hidden;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
-.example-card button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s;
-}
-
-.example-card button:hover::before {
-    left: 100%;
-}
-
-.example-card button:hover {
-    background: linear-gradient(135deg, #4a6b77 0%, #3d5862 100%);
+.btn-comprar:hover {
+    background-color: #00994d;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(92, 129, 142, 0.4);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
-.example-card button:active {
+.btn-comprar:active {
     transform: translateY(0);
-    box-shadow: 0 2px 8px rgba(92, 129, 142, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-.example-card .card-content {
-    padding: 20px 16px 4px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-}
-
-.example-card .card-content::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 16px;
-    right: 16px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
-}
-
-/* Estilos adicionais para textos dentro do card-content */
-.example-card .card-content h3 {
-    margin: 0 0 8px 0;
-    font-size: 18px;
-    font-weight: 700;
-    color: #2c3e50;
-    line-height: 1.3;
-}
-
-.example-card .card-content p {
-    margin: 0 0 12px 0;
-    color: #64748b;
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-.example-card .card-content .price {
-    font-size: 20px;
-    font-weight: 700;
-    color: #16a085;
-    margin: 8px 0;
-}
-
-.example-card .card-content .details {
-    font-size: 12px;
-    color: #94a3b8;
-    margin-bottom: auto;
-}
-
-/* Responsividade */
+/* RESPONSIVO */
 @media (max-width: 768px) {
     .example-card {
         width: 280px;
         height: 380px;
     }
-    
     .example-card img {
         height: 180px;
     }
@@ -139,7 +97,6 @@
         max-width: 300px;
         height: 360px;
     }
-    
     .example-card img {
         height: 160px;
     }
