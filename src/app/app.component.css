@@ -1,4 +1,3 @@
-/* Título */
 h1 {
     font-size: 3em;
     color: #ffffff;
@@ -10,7 +9,6 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Formulário container */
 form {
     width: 95%;
     max-width: 500px;
@@ -25,7 +23,6 @@ form {
     backdrop-filter: blur(6px);
 }
 
-/* Inputs */
 .input-simples {
     width: 100%;
     box-sizing: border-box;
@@ -45,7 +42,6 @@ form {
     outline: none;
 }
 
-/* Botão de enviar */
 .input-submeter {
     width: 100%;
     padding: 12px;
@@ -67,7 +63,6 @@ form {
     transform: translateY(0);
 }
 
-/* Mensagem */
 .mensagem {
     margin: 20px auto;
     border: 1px solid rgba(255, 255, 255, 0.15);

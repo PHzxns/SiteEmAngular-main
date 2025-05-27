@@ -10,43 +10,35 @@ import { Router } from '@angular/router';
   styleUrl: './carro-login.component.css'
 })
 export class CarroLoginComponent {
-  // ===== VARIÁVEIS =====
-  telaRecuperacao = false; // Inicializada corretamente
+  telaRecuperacao = false; 
   titulo = 'Faça seu Login!';
   login = '';
   senha = '';
   email = '';
-  botaoDesabilitado = false; // ← MUDANÇA PRINCIPAL: false para habilitar o botão
+  botaoDesabilitado = false; 
 
   constructor(private router: Router) { }
 
-  // ===== MÉTODO PRINCIPAL (corrigido) =====
   onBotaoClicado() {
-    console.log('Botão clicado!'); // Para debug
+    console.log('Botão clicado!'); 
 
     if (this.telaRecuperacao) {
-      // Lógica para recuperação de senha
       this.enviarRecuperacao();
     } else {
-      // Lógica para login
       this.fazerLogin();
     }
   }
 
-  // ===== LOGIN (separado para melhor organização) =====
   fazerLogin() {
     console.log('Tentando fazer login...', this.login, this.senha);
 
-    // Validação
     if (this.login.trim() === '' || this.senha.trim() === '') {
       alert('Preencha ambos os campos!');
       return;
     }
 
-    // Desabilitar botão durante processamento
     this.botaoDesabilitado = true;
 
-    // Simular delay de processamento (opcional)
     setTimeout(() => {
       if (this.login === 'administrador@infinity.com' && this.senha === 'admin') {
         alert(`Bem-vindo ${this.login}!`);
@@ -58,12 +50,10 @@ export class CarroLoginComponent {
         alert('Dados Inválidos');
       }
       
-      // Reabilitar botão
       this.botaoDesabilitado = false;
     }, 500);
   }
 
-  // ===== RECUPERAÇÃO DE SENHA =====
   enviarRecuperacao() {
     console.log('Enviando recuperação para:', this.email);
 
@@ -77,12 +67,11 @@ export class CarroLoginComponent {
     setTimeout(() => {
       alert('Link de recuperação enviado para seu email!');
       this.botaoDesabilitado = false;
-      this.telaRecuperacao = false; // Volta para tela de login
-      this.email = ''; // Limpa o campo
+      this.telaRecuperacao = false; 
+      this.email = '';
     }, 1000);
   }
 
-  // ===== NAVEGAÇÃO =====
   voltarLogin() {
     this.telaRecuperacao = false;
     this.email = '';
@@ -94,10 +83,8 @@ export class CarroLoginComponent {
 
   criarConta() {
     console.log('Criar conta clicado');
-    // Adicione sua lógica de criar conta aqui
   }
 
-  // ===== GETTER PARA VALIDAÇÃO (opcional) =====
   get podeEnviar(): boolean {
     if (this.telaRecuperacao) {
       return this.email.trim().length > 0 && !this.botaoDesabilitado;
